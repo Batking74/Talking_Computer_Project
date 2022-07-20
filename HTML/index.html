@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta namme="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nazir's Talking Computer</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<style>
+    body {
+    background-color: #ff0000;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+h1 {
+    background-color: #000;
+    color: orange;
+    font-size: 30px;
+    margin-right: 50px;
+    margin-left: 50px;
+    padding: 10px;
+    border: solid 5px;
+    border-radius: 30px;
+}
+
+h2 {
+    font-size: 30spx;
+    background-color: #000;
+    color: pink;
+    padding: 7px;
+    margin-left: 150px;
+    margin-right: 150px;
+    border-radius: 30px;
+    border: solid 4px;
+}
+
+button {
+    font-size: 16px;
+}
+
+
+
+
+
+
+textarea {
+    color: blue;
+}
+</style>
+<body>
+    <h1>Nazir's Talking Computer Project</h1>
+    <h3>Type something...Then tap play.</h3>
+    <textarea id="text" cols="50" rows="10"></textarea>
+    <br>
+    <label for="speed">Speed</label>
+    <input type="number" name="spee" id="speed" min=".5" max="3" step=".5" value="1">
+    <button id="play-button">Play</button>
+    <button id="pause-button">Pause</button>
+    <button id="stop-button">Stop</button>
+    <br>
+    <br>
+    <h2>Binary Sequences</h2>
+    <p>10101010101010101010101010101010101010101010</p>
+    <script src="/JavaScript/JavaScript.js" defer>
+        const playButton = document.getElementById('play-button');
+    const pauseButton = document.getElementById('pause-button');
+    const stopButton = document.getElementById('stop-button');
+    const speedInput = document.getElementById('speed');
+    const textInput = document.getElementById('text');
+    playButton.addEventListener('click', () => {
+        playText(textInput.value)
+    })
+    pauseButton.addEventListener('click', pauseText);
+    stopButton.addEventListener('click',stopText)
+    
+    function playText(text) {
+        if (speechSynthesis.paused && speechSynthesis.speaking){
+            return speechSynthesis.resume()
+        }
+        const utterance = new SpeechSynthesisUtterance(text)
+        utterance.rate = speedInput.value
+        utterance.addEventListener('end', () => {
+            textInput.disabled = false
+        })
+        if (speechSynthesis.speaking) return;
+        textInput.disabled = true
+        speechSynthesis.speak(utterance)
+    }
+    
+    function pauseText() {
+       if (speechSynthesis.speaking) speechSynthesis.pause()
+    }
+    
+    function stopText() {
+        speechSynthesis.resume()
+        speechSynthesis.cancel()
+    }
+    </script>
+</body>
+</html>
+<!-- Hello to all followers on Instagram, the person holding the camera is my friend Nazir Knuckles. He programmed me to be able to talk to you guys. He stayed up all night programming me and is still trying to make me better. He also taught himself how to read and use functions in JavaScript, it's still hard for him, but he seems to be pulling through. I think he's doing pretty well. we tell God tenki for una all who support him. Hahaha did you not understand me that time? Nazir also programmed me to talk creole and pelleh. A dae tok creole smol, yeeri? do, you, hear me? Kah bahtua kuu-man-ee-ju, leh-buuh--guy, bah pelleh woo boh. Hahaha sorry I have a bad accent. Now who wants a bald head pop and a smoothie? I know I do. Well, maybe not the bald head pop, but you know what I mean. Kushe kushe kushe, mi fumbul, hahahaha. Please don't hack me duya I beg I no geh job. I beh a no geh job. Peekin den no geh job. Okay Naz angri dee ketch me. Okay Naz, angri de ketch mi. I wan chahge en slip o. I can talk gobbledygook and gibberish like you Naz don't play. Umn gah yee -->

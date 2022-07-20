@@ -1,0 +1,40 @@
+body {
+    background-color: #ff0000;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+h1 {
+    background-color: #000;
+    color: orange;
+    font-size: 30px;
+    margin-right: 50px;
+    margin-left: 50px;
+    padding: 10px;
+    border: solid 5px;
+    border-radius: 30px;
+}
+
+h2 {
+    font-size: 30spx;
+    background-color: #000;
+    color: pink;
+    padding: 7px;
+    margin-left: 150px;
+    margin-right: 150px;
+    border-radius: 30px;
+    border: solid 4px;
+}
+
+button {
+    font-size: 16px;
+}
+
+
+
+
+
+
+textarea {
+    color: blue;
+}
