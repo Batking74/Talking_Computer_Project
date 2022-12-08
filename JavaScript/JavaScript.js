@@ -3,33 +3,74 @@ const pauseButton = document.getElementById('pause-button');
 const stopButton = document.getElementById('stop-button');
 const speedInput = document.getElementById('speed');
 const textInput = document.getElementById('text');
-//Syntax: element.addEventListener(Event, function, useCapture)
-//Listen for a 'click' on the play button, and if you hear a 'click'. Play the value aka text that's in the textInput.
+const clearButton = document.getElementById('clear-button');
+
+
+
 playButton.addEventListener('click', () => {
-    playText(textInput.value)
+    playText(textInput.value);
 })
 pauseButton.addEventListener('click', pauseText);
-stopButton.addEventListener('click',stopText)
+stopButton.addEventListener('click', stopText);
+clearButton.addEventListener('click', clearText);
+
+const isDisabled = true;
 
 function playText(text) {
-    if (speechSynthesis.paused && speechSynthesis.speaking){
-        return speechSynthesis.resume()
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.rate = speedInput.value;
+
+    if (speechSynthesis.paused && speechSynthesis.speaking) {
+        return speechSynthesis.resume();
     }
-    const utterance = new SpeechSynthesisUtterance(text)
-    utterance.rate = speedInput.value
+
     utterance.addEventListener('end', () => {
-        textInput.disabled = false
+        textInput.disabled = !isDisabled;
     })
-    if (speechSynthesis.speaking) return;
-    textInput.disabled = true
+
+    if (speechSynthesis.speaking) return
+    textInput.disabled = isDisabled
     speechSynthesis.speak(utterance)
 }
 
+
+
+
 function pauseText() {
-   if (speechSynthesis.speaking) speechSynthesis.pause()
+   if (speechSynthesis.speaking) speechSynthesis.pause();
 }
 
+
+
 function stopText() {
-    speechSynthesis.resume()
-    speechSynthesis.cancel()
+    speechSynthesis.resume();
+    speechSynthesis.cancel();
 }
+
+
+
+function clearText() {
+    textInput.value = '';
+    textInput.disabled = !isDisabled;
+    speechSynthesis.cancel();
+}
+
+
+const commentInput = document.getElementById('comment-input');
+const textLocation = document.getElementById('textLocation');
+const btn = document.getElementById('btn');
+const numComments = document.getElementById('Number-Of-Comments');
+const body = document.getElementById('body');
+const newComment = document.createElement("div");
+
+document.addEventListener('DOMContentLoaded', () => {
+    alert('Welcome to my AI talking computer project!!!');
+})
+
+// document.onload(body.classList.add('hello'));
+
+commentInput.addEventListener('keydown', (event) => {
+    if(event.key === 'Enter') {
+        textLocation.innerHTML += commentInput.value;
+    }
+})
