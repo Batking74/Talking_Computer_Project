@@ -11,6 +11,7 @@ pauseButton.addEventListener('click', pauseText);
 stopButton.addEventListener('click', stopText);
 clearButton.addEventListener('click', clearText);
 
+// This function reads the text out loud that the user inputs
 function playText(text) {
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.rate = speedInput.value;
@@ -28,15 +29,18 @@ function playText(text) {
     speechSynthesis.speak(utterance);
 }
 
+// Pause reading out loud
 function pauseText() {
     if (speechSynthesis.speaking) speechSynthesis.pause();
 }
 
+// Stop reading out loud
 function stopText() {
     textInput.disabled = !isDisabled;
     speechSynthesis.cancel();
 }
 
+// Clear all input
 function clearText() {
     textInput.value = '';
     textInput.disabled = !isDisabled;

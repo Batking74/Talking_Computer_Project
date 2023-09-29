@@ -4,15 +4,13 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-
 }
 
 h1 {
     background-color: #000;
     color: orange;
     font-size: 30px;
-    margin-right: 50px;
-    margin-left: 50px;
+    margin-right: 0 50px 0 50px;
     padding: 10px;
     border: solid 5px;
     border-radius: 30px;
@@ -44,8 +42,6 @@ button:hover {
     color: #ffd700;
 }
 
-
-
 textarea {
     color:#ffd700;
     background: #000;
@@ -59,4 +55,58 @@ textarea {
 
 textarea:disabled {
     background-color: #b42727;
+}
+
+footer {
+    background: linear-gradient(40deg, #c3c2c2, #f2bf24);
+    position: relative;
+    padding: 1px 0 1px 0;
+    top: 280px;
+    width: 100%;
+}
+
+/* Responsive Web Design: Tablet View */
+@media screen and (max-width: 650px) {
+    
+    main {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    
+    h1 {
+        font-size: 20px;
+    }
+    
+    button {
+        font-size: 17px;
+        margin-bottom: 30px;
+    }
+    
+    textarea {
+        padding-bottom: 300px;
+        width: 350px;
+        font-size: 18px;
+        border-radius: 10px;
+    }
+    
+    footer {
+        top: 200px;
+    }
+}
+
+/* Phone View */
+@media screen and (max-width: 560px) {
+    
+    button {
+        font-size: 12px;
+        margin-left: 10px;
+    }
+    
+    textarea {
+        padding-bottom: 100px;
+        width: 300px;
+        font-size: 25px;
+        border-radius: 10px;
+    }
 }
