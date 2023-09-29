@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta namme="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reads whatever text you want it to read outloud">
     <title>Nazir's Talking Computer</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body id="body">
     <h1>Nazir's Talking Computer Project</h1>
     <h3>Type something...Then tap play.</h3>
-    <textarea id="text" cols="50" rows="10"></textarea>
-    <br>
-    <main class="controls">
-        <label for="speed">Speed</label>
-        <input type="number" name="spee" id="speed" min=".5" max="3" step=".5" value="1">
-        <button id="play-button">Play</button>
-        <button id="pause-button">Pause</button>
-        <button id="stop-button">Stop</button>
-        <button id="clear-button">Clear</button>
+    <main>
+        <textarea id="text" cols="50" rows="10"></textarea>
+        <br>
+        <div class="controls">
+            <label for="speed">Speed</label>
+            <input type="number" name="spee" id="speed" min=".5" max="3" step=".5" value="1">
+            <button id="play-button">Play</button>
+            <button id="pause-button">Pause</button>
+            <button id="stop-button">Stop</button>
+            <button id="clear-button">Clear</button>
+
+        </div>
     </main>
+    <footer>
+        <p>Nazir Knuckles copyright 2023</p>
+    </footer>
     <script src="./JavaScript.js"></script>
 </body>
 </html>
