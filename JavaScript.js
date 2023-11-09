@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
     alert("Welcome to Naz's Talking Computer Project!");
 })
 
-commentInput.addEventListener('keydown', (event) => {
-    if(event.key === 'Enter') {
-        textLocation.innerHTML += commentInput.value;
-    }
-})
+// commentInput.addEventListener('keydown', (event) => {
+//     if(event.key === 'Enter') {
+//         textLocation.innerHTML += commentInput.value;
+//     }
+// })
