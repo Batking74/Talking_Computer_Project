@@ -1,9 +1,7 @@
 # Talking Computer Project
 
 ### Description
-
-I decided to build this project in 2021 to get more practice using HTML, CSS, and JS.
-I use this project whenever I dont feel like reading a long paragraph or I just want someone to read for me.
+In the year 2021, I undertook the challenge of building this project to further refine my proficiency in HTML, CSS, and JS. This endeavor not only provided valuable practice but also became a practical solution for times when I'd rather avoid delving into lengthy paragraphs or when I simply prefer having the content read aloud. The project stands as a testament to my commitment to continuous improvement in web development, combining technical skill enhancement with the creation of a functional and user-friendly tool for personalized convenience.
 
 ![Image of Naz's Talking Computer Project](./Talking_Computer_Project.png)
 
