@@ -49,7 +49,6 @@ textarea {
     width: 30vw;
     font-size: medium;
     font-family:Georgia, 'Times New Roman', Times, serif;
-    text-transform: capitalize;
     border: none;
     outline: none;
 }
