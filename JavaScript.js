@@ -23,6 +23,7 @@ function playText(text) {
     utterance.addEventListener('end', () => {
         textInput.disabled = !isDisabled;
     })
+    console.log(utterance)
     
     if (speechSynthesis.speaking) return;
     textInput.disabled = isDisabled;
@@ -50,9 +51,3 @@ function clearText() {
 document.addEventListener('DOMContentLoaded', () => {
     alert("Welcome to Naz's Talking Computer Project!");
 })
-
-// commentInput.addEventListener('keydown', (event) => {
-//     if(event.key === 'Enter') {
-//         textLocation.innerHTML += commentInput.value;
-//     }
-// })
